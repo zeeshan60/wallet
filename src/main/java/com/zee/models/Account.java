@@ -67,4 +67,15 @@ public class Account {
 
         return Objects.hash(id, title, category, type, description);
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", category=" + category +
+                ", type=" + type +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

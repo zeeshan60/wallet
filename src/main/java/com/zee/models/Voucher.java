@@ -1,11 +1,13 @@
 package com.zee.models;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
-public class Journal {
+public class Voucher {
     private long id;
     private String desciption;
+    private List<VoucherEntry> entries;
     private Date date;
     private Date lastModifiedDate;
     private Date lastCreatedDate;
@@ -24,6 +26,14 @@ public class Journal {
 
     public void setDesciption(String desciption) {
         this.desciption = desciption;
+    }
+
+    public List<VoucherEntry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<VoucherEntry> entries) {
+        this.entries = entries;
     }
 
     public Date getDate() {
@@ -54,12 +64,12 @@ public class Journal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Journal journal = (Journal) o;
-        return id == journal.id &&
-                Objects.equals(desciption, journal.desciption) &&
-                Objects.equals(date, journal.date) &&
-                Objects.equals(lastModifiedDate, journal.lastModifiedDate) &&
-                Objects.equals(lastCreatedDate, journal.lastCreatedDate);
+        Voucher voucher = (Voucher) o;
+        return id == voucher.id &&
+                Objects.equals(desciption, voucher.desciption) &&
+                Objects.equals(date, voucher.date) &&
+                Objects.equals(lastModifiedDate, voucher.lastModifiedDate) &&
+                Objects.equals(lastCreatedDate, voucher.lastCreatedDate);
     }
 
     @Override
