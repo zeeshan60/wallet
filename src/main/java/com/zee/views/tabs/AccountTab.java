@@ -1,25 +1,24 @@
 package com.zee.views.tabs;
 
-import com.vaadin.flow.component.HasComponents;
-import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.dom.Element;
-import com.zee.views.JournalView;
+import com.vaadin.flow.component.Component;
+import com.zee.views.AccountView;
 
-public class AccountTab extends Tab implements ITab {
+public class AccountTab extends AbstractTab {
 
-    private Element layout;
-    private JournalView journalView;
+    private AccountView accountView;
 
-    public AccountTab(Element layout, JournalView journalView) {
-        this.layout = layout;
-        this.journalView = journalView;
+    public AccountTab(AccountView accountView) {
+        super("Accounts");
+        this.accountView = accountView;
+        tabDidUnSelected();
+    }
+
+    public AccountTab() {
+        this(new AccountView());
     }
 
     @Override
-    public void tabDidSelected() {
-
-        layout.getChildren().forEach(e -> e.setVisible(false));
-        journalView.setVisible(true);
-
+    public Component getView() {
+        return accountView;
     }
 }

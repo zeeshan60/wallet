@@ -13,5 +13,9 @@ public abstract class AccountFactory {
         return factory;
     }
 
+    public static void setFactory(AccountFactory factory) {
+        AccountFactory.factory = factory;
+    }
+
     public abstract AccountService getAccountService();
 }

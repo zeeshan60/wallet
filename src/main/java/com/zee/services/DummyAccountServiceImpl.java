@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-public class AccountServiceImpl implements AccountService {
+public class DummyAccountServiceImpl implements AccountService {
     @Override
     public CompletionStage<List<Account>> getAccounts() {
         return CompletableFuture.completedFuture(DummyAccounts.getAccounts());
